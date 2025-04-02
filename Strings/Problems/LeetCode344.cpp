@@ -17,8 +17,8 @@ class Solution {
             while(l<r){
                 swap(s[l++], s[r--]);
             }
-        }
-    };
+     }
+};
 
 
 
