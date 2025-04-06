@@ -13,9 +13,8 @@ int main(){
 
     s.insert(6); // insert 6 into the set
 
-    s.insert(1); // insert 1 into the set again (duplicate, will not be added)
-    s.insert(2); // insert 2 into the set again (duplicate, will not be added)
-
+    s.insert(1); 
+    s.insert(2); 
 
     for(auto i: s){ // iterate over the set
         cout<<i<<" "; // print each element in the set
