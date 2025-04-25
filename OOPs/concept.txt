@@ -1,0 +1,305 @@
+Classes & Objects
+
+* objects are entities in the real world
+
+* class is like a blueprint of these entities
+
+----------------------------------------------------------------------------------------------------
+Access Modifiers:
+
+private : data & methods accessible inside class(default)
+
+public : data & methods accessible to everyone
+
+protected : data & methods accessible inside class & to its derived class
+
+----------------------------------------------------------------------------------------------------
+Constructor:
+Special method invoked automatically at time of obejct creation. Used for Initialisation.
+
+- same name as class
+- Constructor doesn't have a return type
+- Only called once(automatically) at the time of obejct creation
+- Memory allocation happens when Constructor is called
+- Always created as public
+
+Types of Constructor:=
+
+**non-parameterized Constructor
+**parameterized Constructor
+**Copy Constructor : Special Constructor(default) used to Copy properties of one obejct into another
+
+
+Note: Constructor overloading is type of Polymorphism(compile time)
+
+'this' is a Special pointer in C++ that points to the current obejct.
+
+use:
+   this->prop is same as *(this).prop
+
+-----------------------------------------------------------------------------------------------------------------
+Shallow & Deep copy:
+A Shallow copy of an object copies all of the member values from one obejct to another
+
+A Deep copy, on the other hand, not Only copies the member values but also makes copies of any dynamically 
+that member points to.
+
+**Note :< Remember the exapmle of dynamically allocation cgpaPtr in the default Constructor>
+
+------------------------------------------------------------------------------------------------------------------
+Destructor:
+Opposite of Constructor. It deallocate Memory for an object but only those statically created not for those 
+dynamically allocated. For that we have to use delete keyword(Remember the Cocept of Deep copy and Shallow copy)
+
+use:
+
+   ~Teacher(){
+       cout << "Hi, I delete everything" << endl;
+       delete cgpaPtr; // to protect Memory leak.
+   }
+
+----------------------------------------------------------------------------------------------------------------------
+syntax:
+
+class Teacher{
+private:
+    string salary;
+
+public:
+    // properties
+    string name;
+    string department;
+    string subject;
+
+
+    // Constructors
+    // non-parameterized Constructor
+    Teacher(){
+        cout << "Hi, I am Constructor" << endl;
+        department = "Computer Science";        // Initialisation
+    }
+
+    // parameterized Constructor
+    Teacher(string name, string department, string subject, double salary){
+        this->name = name;
+        this->department = department;
+        this->subject = subject;
+        this->salary = salary;
+    }
+    
+    // custom copy Constructor (not default)
+    Teacher(Teacher &object){
+        this->name = obejct.name;
+        this->department = obejct.department;
+        this->subject = object.subject;
+        this->salary = object.salary;
+    }
+  
+
+    // methods / member function
+    void changeDepartment(string newDept){
+        department = newDept;
+    }
+
+    //setter function
+    void setSalary(double s){
+        salary = s;
+    }
+
+    // getter function
+    double getSalary(){
+        return salary;
+    }
+
+};
+
+
+int main(){
+    Teacher number1;   // Constructor is called automatically 
+
+    number1.name = "Ankit";
+    number1.subject = "C++";
+    number1.department = "Computer Science";
+    number1.setSalary(25000);
+    
+    cout << number1.name << endl;
+
+    cout << number1.getSalary() << endl;
+
+
+    Teacher number2(number1); // default copy Constructor invoked automatically
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------
+Four pillers of obejct oriented programming:
+
+1. Encapsulation
+2. Abstraction
+3. Inheritance
+4. Polymorphism
+
+
+
+1. Encapsulation:
+
+Encapsulation is wrapping up of data & member functions in a single unit called class. It helps in data hiding.
+
+Example 1:
+
+class Account{
+private:              // data hiding
+   double balance;
+   string password;
+
+public:
+   string accountId;
+   string username;
+
+};
+
+
+2. Inheritance(Enhance code reusability)
+When properties and member function of base class are passed on to the derived class.
+
+Mode of Inheritance :=
+private : 
+protected : 
+public : 
+
+Types of Inheritance:
+1. Single Inheritance
+2. Multi-level Inheritance
+3. Multiple Inheritance
+4. Hierarchial Inheritance
+5. Hybrid Inheritance(Mix of Inheritance)
+
+
+Example 1:
+
+class Person{
+public:
+    string name;
+    int age;
+    
+    //non-parameterized
+    Person(){
+        cout << "I am parent" << endl;
+    }
+    
+    // parameterized
+    Person(string name, int age){
+        this->name = name;
+        this->age = age;
+    }
+};
+
+class Student : public Person{
+public:
+      // name, age, rollno
+      int rollno;
+      
+      // non-parameterized
+      Student(){
+        cout << "I am child" << endl;
+      }
+      
+      // parameterize
+      Student(string name, int age, int rollno) : Person(name, age){
+        this->rollno = rollno;
+      }
+
+      void getInfo(){
+         cout << "Name : " << name <<endl;
+         cout << "Age : " << age <<endl;
+         cout << "Rollno : " << rollno <<endl;
+
+      }
+}
+
+
+int main(){
+    Student number1("Raj", 21, 1234);
+
+    number1.getInfo();
+
+    return 0;
+}
+
+3. Polymorphism
+Polymorphism is the ability of the object to take on different forms or behave in different ways depending
+on the context in which they are used.
+
+- Compile time Polymorphism
+        **Constructor overloading
+        **function overloading
+          Example:
+            void show(int x){
+               cout << "int : " << x << endl;
+            }
+
+            void show(char ch){
+               cout << "char : " << ch << endl;
+            }
+        **Operator overloading
+
+- Run time Polymorphism(Dynamic)
+Note : Always Remember Inheritance
+        **function overriding
+          Parent & Child both contain the same function with different implemenation.
+          The parent class function is said to be overridden.
+
+        **Virtual functions
+          -Virtual functions are dynamic in nature
+          -Defined by the keyword 'Virtual' inside a base class and are always declared with a base class and overridden
+           in a child class.
+          -A Virtual function is called during runtime
+
+4. Abstraction
+Hiding all uncessary details & showing only the important parts.
+Access Modifiers are one of the ways to implement Abstraction
+
+ONE more way:
+using Astract Classes
+- Abstract classes are used to provide a base class from which other classes can be derived.
+- They cannot be instantiated and are meant to be inherited
+- Abstract classes are typically used to define an interface for derived classes.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Static keyword
+*Static variables
+- variables declared as static in a function are created & initialised once for the lifetime of the program. // in function
+  exapmle:
+    void func(){
+        static int x = 0;
+        cout << "x : " << x << endl;
+        x++;
+    }
+
+- static variables in a class are created & initialised once. They are shared by all the objects of the class. //in class
+
+*Static object
+
+  example:
+
+    class Abc{
+        Abc(){
+           cout << "Constructor" <<endl;
+        }
+
+        ~Abc(){
+            cout << "Destructor" <<endl;
+
+        }
+    }
+
+    int main(){
+        if(true){
+            Abc obj;
+            // static Abc obj;
+        }
+
+        cout << "end of the main function" <<end;
+        return 0;
+    }
