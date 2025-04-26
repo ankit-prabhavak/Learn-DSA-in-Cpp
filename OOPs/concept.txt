@@ -168,6 +168,7 @@ private :
 protected : 
 public : 
 
+
 Types of Inheritance:
 1. Single Inheritance
 2. Multi-level Inheritance
@@ -303,3 +304,4 @@ Static keyword
         cout << "end of the main function" <<end;
         return 0;
     }
+
