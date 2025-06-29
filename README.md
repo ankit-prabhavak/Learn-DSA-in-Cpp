@@ -1,6 +1,6 @@
-# 📚 DSA_Full_Course (C++)
+# 📚 Learn-DSA-in-Cpp
 
-Welcome to the **DSA_Full_Course** repository!  
+Welcome to the **Learn-DSA-in-Cpp** repository!  
 This repo is designed to help you strengthen your understanding of **Data Structures and Algorithms (DSA)** using **C++**, whether you're preparing for coding interviews, competitive programming, or just improving your problem-solving skills.
 
 ---
@@ -52,4 +52,4 @@ Whether it’s fixing typos, adding better examples, or optimizing existing code
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/DSA_Full_Course.git
+   git clone https://github.com/your-username/Learn-DSA-in-Cpp.git
