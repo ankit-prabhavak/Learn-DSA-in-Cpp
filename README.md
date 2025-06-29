@@ -52,4 +52,4 @@ Whether it’s fixing typos, adding better examples, or optimizing existing code
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/Learn-DSA-in-Cpp.git
+   git clone https://github.com/ankit-prabhavak/Learn-DSA-in-Cpp.git
