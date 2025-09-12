@@ -35,7 +35,7 @@ void topView(Node* root) {
         }
 
         if (node->left) {
-            q.push(make_pair(node->left, hd - 1));
+            q.push(make_pair(node->left, hd - 1)); 
         }
         if (node->right) {
             q.push(make_pair(node->right, hd + 1));
