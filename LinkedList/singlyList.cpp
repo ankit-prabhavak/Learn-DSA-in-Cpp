@@ -120,8 +120,37 @@ public:
 
         return -1;
       }
-  
 
+      void insertionSortLL() {
+            if (!head || !head->next) return;
+
+            Node* sorted = nullptr; // New sorted list
+
+            Node* curr = head;
+            while (curr) {
+                Node* next = curr->next;
+
+                // Insert curr into sorted list
+                if (!sorted || curr->data < sorted->data) {
+                    curr->next = sorted;
+                    sorted = curr;
+                } else {
+                    Node* temp = sorted;
+                    while (temp->next && temp->next->data < curr->data) {
+                        temp = temp->next;
+                    }
+                    curr->next = temp->next;
+                    temp->next = curr;
+                }
+                curr = next;
+            }
+            head = sorted;
+            // Update tail
+            tail = head;
+            while (tail && tail->next) tail = tail->next;
+
+          }
+           
       void printLL() {
         Node* temp = head;
         while(temp != NULL){
@@ -152,6 +181,9 @@ int main() {
     ll.printLL();
 
     cout << ll.search(3) << endl;
+    ll.insertionSortLL();
+
+    ll.printLL();
 
 
     return 0;
