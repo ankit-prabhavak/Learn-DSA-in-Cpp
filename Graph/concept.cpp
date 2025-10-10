@@ -1,5 +1,8 @@
 #include <iostream>
 #include <list>
+#include <vector>
+#include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -27,6 +30,72 @@ public:
             cout << endl;
         }
     }
+    
+    // Function to perform BFS traversal from a given source vertex
+    void bfs(int start) {
+        vector<bool> visited(V, false);
+        list<int> queue;
+
+        visited[start] = true;
+        queue.push_back(start);
+
+        while (!queue.empty()) {
+            int s = queue.front();
+            cout << s << " ";
+            queue.pop_front();
+
+            for (int v : adj[s]) {
+                if (!visited[v]) {
+                    visited[v] = true;
+                    queue.push_back(v);
+                }
+            }
+        }
+        cout << endl;
+
+    }
+    // Function to perform DFS traversal from a given source vertex using recursion
+    void dfsUtil(int v, vector<bool>& visited) {
+        visited[v] = true;
+        cout << v << " ";
+
+        for (int neighbor : adj[v]) {
+            if (!visited[neighbor]) {
+                dfsUtil(neighbor, visited);
+            }
+        }
+    } 
+
+    void dfs(int start) {
+        vector<bool> visited(V, false);
+        dfsUtil(start, visited);
+        cout << endl;
+    }
+    
+    // Dfs traversal using stack
+    void DFS(int start) {
+        vector<bool> visited(V, false);
+        stack<int> s;
+
+        s.push(start);
+        visited[start] = true;
+
+        while (!s.empty()) {
+            int v = s.top();
+            s.pop();
+            cout << v << " ";
+
+            for (int neighbor : adj[v]) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    s.push(neighbor);
+                }
+            }
+        }
+        cout << endl;
+    }
+
+
 
 };
 
@@ -43,7 +112,16 @@ int main() {
     g.addEdge(3, 4);
 
     g.printGraph(); // Print the adjacency list representation of the graph
+    
 
+    cout << "BFS traversal starting from vertex 0: ";
+    g.bfs(0); // Perform BFS starting from vertex 0
+
+    cout << "DFS traversal (recursive) starting from vertex 0: ";
+    g.dfs(0); // Perform DFS starting from vertex 0
+
+    cout << "DFS traversal (using stack) starting from vertex 0: ";
+    g.DFS(0); // Perform DFS using stack starting from vertex 0
 
     return 0;
 }
@@ -51,5 +129,8 @@ int main() {
 
 
 
+// BFS traversal starting from vertex 0: 0 1 4 2 3
+// DFS traversal (recursive) starting from vertex 0: 0 1 2 3 4
+// DFS traversal (using stack) starting from vertex 0: 0 4 3 2 1
 
 
