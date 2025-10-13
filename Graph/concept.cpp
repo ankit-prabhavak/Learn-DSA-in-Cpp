@@ -132,5 +132,3 @@ int main() {
 // BFS traversal starting from vertex 0: 0 1 4 2 3
 // DFS traversal (recursive) starting from vertex 0: 0 1 2 3 4
 // DFS traversal (using stack) starting from vertex 0: 0 4 3 2 1
-
-
