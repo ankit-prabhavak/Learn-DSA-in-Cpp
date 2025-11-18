@@ -7,7 +7,7 @@ using namespace std;
 
 void countingSort(vector<int>& arr) {
     
-    int maxi = *max_element(arr.begin(), arr.end());
+    int maxi = *max_element(arr.begin(), arr.end()); // Take directly the max value if given in the constraints
     
     vector<int> count(maxi+1, 0);
 
