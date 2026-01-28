@@ -1,0 +1,20 @@
+REVISION >> DSA In C++
+
+Array (Part 1)
+--------------
+1. Majority Element (Leetcode 169) [Solved] [Array]
+NOTE:   
+   Concept Used = "Moore's Voting Algorithm" 
+
+2. Find Missing & Repeated Values (Leetcode 2965) [Solved] [Hashing]
+NOTE:
+Concept In Use >>
+      * Hashing using unordered set
+      * Basic Maths
+      * N x N Looping
+
+3. Merge Sorted Array (Leetcode 88) [Solved] [Array]
+NOTE:
+    Concept = Backward Looping for Merging(Saving Extra Space)
+
+4. 

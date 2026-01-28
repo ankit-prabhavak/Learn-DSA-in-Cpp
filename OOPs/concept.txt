@@ -271,7 +271,7 @@ using Astract Classes
 Static keyword
 *Static variables
 - variables declared as static in a function are created & initialised once for the lifetime of the program. // in function
-  exapmle:
+  example:
     void func(){
         static int x = 0;
         cout << "x : " << x << endl;
