@@ -17,4 +17,6 @@ Concept In Use >>
 NOTE:
     Concept = Backward Looping for Merging(Saving Extra Space)
 
-4. 
+4. Single Number (Leetcode 136) [Solved] [Array]
+NOTE:
+    All duplicate numbers cancel out, leaving the unique number.
