@@ -20,3 +20,7 @@ NOTE:
 4. Single Number (Leetcode 136) [Solved] [Array]
 NOTE:
     All duplicate numbers cancel out, leaving the unique number.
+
+5. Best Time to Buy & Sell Stock (Leetcode 121) [Solved] [Array] 
+Note:
+    Simple Logic Just Game of Better Understading of details given and Looping
