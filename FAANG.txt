@@ -32,3 +32,13 @@ Note:
 
 Array (Part 2)
 --------------
+1. Maximum Subarray Sum (Leetcode 53) [Solved] [Array]
+Note:
+Kadane's Algorithm: If the running sum becomes worse than starting fresh, drop it and start again.
+
+2. Container With Most Water
+
+
+
+
+

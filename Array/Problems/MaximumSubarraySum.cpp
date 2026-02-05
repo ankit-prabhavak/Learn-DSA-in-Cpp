@@ -1,7 +1,9 @@
 #include <iostream>
 
 
-
+// LeetCode Problem: Maximum Subarray Sum
+// Given an integer array, find the contiguous subarray (containing at least one number) which has the largest sum and
+// return its sum.
 
 using namespace std;
 
