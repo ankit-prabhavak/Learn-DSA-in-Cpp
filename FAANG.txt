@@ -24,3 +24,11 @@ NOTE:
 5. Best Time to Buy & Sell Stock (Leetcode 121) [Solved] [Array] 
 Note:
     Simple Logic Just Game of Better Understading of details given and Looping
+
+6. Pow(x, n) (Leetcode 50) [Solved] [Maths]
+Note: 
+    Nothing just simple Maths Concept
+
+
+Array (Part 2)
+--------------
