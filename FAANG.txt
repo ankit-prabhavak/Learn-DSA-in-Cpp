@@ -36,7 +36,9 @@ Array (Part 2)
 Note:
 Kadane's Algorithm: If the running sum becomes worse than starting fresh, drop it and start again.
 
-2. Container With Most Water
+2. Container With Most Water (Leetcode 11) [Solved] [Array]
+Note:
+Use left and right pointer for optimization. Just apply basic conditions correctly.
 
 
 
