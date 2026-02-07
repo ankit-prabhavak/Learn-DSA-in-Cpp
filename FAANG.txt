@@ -40,6 +40,10 @@ Kadane's Algorithm: If the running sum becomes worse than starting fresh, drop i
 Note:
 Use left and right pointer for optimization. Just apply basic conditions correctly.
 
+3. Sort Colors [Leetcode 75] [Solved] [Array]
+Note:
+Use Dutch National Flag Algorithm
+
 
 
 
