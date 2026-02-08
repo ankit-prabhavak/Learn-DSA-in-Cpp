@@ -44,6 +44,12 @@ Use left and right pointer for optimization. Just apply basic conditions correct
 Note:
 Use Dutch National Flag Algorithm
 
+4. 3Sum (Leetcode 15) [Solved] [Array]
+Note:
+Multiple Approaches but Two Pointers Most optimized Approach.
+
+
+
 
 
 
