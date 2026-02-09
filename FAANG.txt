@@ -48,6 +48,10 @@ Use Dutch National Flag Algorithm
 Note:
 Multiple Approaches but Two Pointers Most optimized Approach.
 
+5. 4Sum (Leetcode 18) [Solved] [Array]
+Note:
+Solved Just like 3Sum Approach using two pointers
+
 
 
 
