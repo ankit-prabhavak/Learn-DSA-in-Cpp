@@ -52,6 +52,10 @@ Multiple Approaches but Two Pointers Most optimized Approach.
 Note:
 Solved Just like 3Sum Approach using two pointers
 
+6. Search a 2D matrix (Leetcode 74) [Solved] [2D vectors]
+Note:
+Used binarySearch technique
+
 
 
 
