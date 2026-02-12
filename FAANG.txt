@@ -56,6 +56,17 @@ Solved Just like 3Sum Approach using two pointers
 Note:
 Used binarySearch technique
 
+Array (Part 3)
+--------------
+1. Next Permutation [LeetCode 31] [Solved] [Array]
+Note:
+Need Focus
+
+2. Merge Intervals [LeetCode 56] [Solved] [Array]
+Note:
+Simple Just be little bit careful while writing conditions
+
+
 
 
 
