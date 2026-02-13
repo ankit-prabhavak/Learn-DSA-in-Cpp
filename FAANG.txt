@@ -66,6 +66,9 @@ Need Focus
 Note:
 Simple Just be little bit careful while writing conditions
 
+3. Longest substring without repeating characters [LeetCode 3] [Solved] [Array]
+Note:
+Sliding Window
 
 
 
