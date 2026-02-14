@@ -70,6 +70,9 @@ Simple Just be little bit careful while writing conditions
 Note:
 Sliding Window
 
+4. Set Matrix Zeroes [LeetCode 73] [Solved] [Array]
+Note:
+Set and Looping
 
 
 
