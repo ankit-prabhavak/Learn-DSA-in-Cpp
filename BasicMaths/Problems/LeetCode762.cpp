@@ -1,5 +1,6 @@
 #include <vector>
 
+// Leetcode 762: Prime Number of Set Bits in Binary Representation
 class Solution {
 public:
     int countPrimeSetBits(int left, int right) {

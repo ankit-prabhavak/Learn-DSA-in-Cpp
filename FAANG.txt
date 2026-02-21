@@ -87,6 +87,10 @@ Array (Part 4)
 Note:
 Used Prefix Sum + Hash Map
 
+2. Find the Duplicate Number [LeetCode 287] [Array]
+Note: 
+Used Slow and Fast pointers Approach
+
 
 
 
