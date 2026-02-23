@@ -94,7 +94,11 @@ Used Slow and Fast pointers Approach
 3. Count Inversions [Hackerrank] [Array]
 Used Two Approaches Merge sort and Bubble sort 
 
-4. 
+4. Spiral Matrix [LeetCode 54] [2D vectors]
+Note:
+Just Simple Traversal
+
+
 
 
 
