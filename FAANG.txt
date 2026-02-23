@@ -91,6 +91,10 @@ Used Prefix Sum + Hash Map
 Note: 
 Used Slow and Fast pointers Approach
 
+3. Count Inversions [Hackerrank] [Array]
+Used Two Approaches Merge sort and Bubble sort 
+
+4. 
 
 
 
