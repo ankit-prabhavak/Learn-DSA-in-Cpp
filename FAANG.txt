@@ -98,6 +98,17 @@ Used Two Approaches Merge sort and Bubble sort
 Note:
 Just Simple Traversal
 
+5. Search a 2D Matrix II [LeetCode 240] [2D vectors]
+Note: 
+Binary Search Type Traversal in a 2D Matrix
+
+Array (Part 5)
+--------------
+1. Trapping Rainwater [LeetCode ] []
+Note: 
+
+
+
 
 
 
