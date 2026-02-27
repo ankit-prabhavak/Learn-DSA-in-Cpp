@@ -104,8 +104,12 @@ Binary Search Type Traversal in a 2D Matrix
 
 Array (Part 5)
 --------------
-1. Trapping Rainwater [LeetCode ] []
+1. Trapping Rainwater [LeetCode 42] [ExtraProblems]
 Note: 
+Used 3 Approaches 
+Naive 
+Pre Computed Height Array
+optimized Using Two Pointers
 
 
 
