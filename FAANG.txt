@@ -115,7 +115,8 @@ optimized Using Two Pointers
 Note:
 Used Max Heap Approach
 
-
+3. Largest Rectangle in Histogram [LeetCode 84] [Stack]
+Note:
 
 
 
