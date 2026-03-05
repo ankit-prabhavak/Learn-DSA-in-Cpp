@@ -117,6 +117,12 @@ Used Max Heap Approach
 
 3. Largest Rectangle in Histogram [LeetCode 84] [Stack]
 Note:
+Just understand the Logic of using stack to find the left smaller and right smaller
+
+4. Reverse pairs [LeetCode 493] [Array]
+Note:
+Used modified mergeSort Approach
+
 
 
 
