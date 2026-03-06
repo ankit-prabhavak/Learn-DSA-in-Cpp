@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+// Leetcode 125 : 
 class Solution {
     public:
 
@@ -17,7 +17,7 @@ class Solution {
             int r = s.size() - 1;
 
             while (l < r) {
-                while (l < r && !isAlphanumeric(s[l])) l++;
+                while (l < r && !isAlphanumeric(s[l])) l++;  // skip the characters that are not alphanumeric
                 while (l < r && !isAlphanumeric(s[r])) r--;
 
                 if (tolower(s[l]) != tolower(s[r])) return false;
@@ -41,3 +41,8 @@ int main(){
 
     return 0;
 }
+
+/*
+NOTE: 
+Instead of making a custom function for checking alphanumberic characters we can use built in methods like isalpha() or isalnum().
+*/
