@@ -129,6 +129,11 @@ Strings (Part 1)
 Note:
 Used Custom function to check alphanumeric characters
 
+2. Valid Anagram [LeetCode 242] [Strings]
+Note:
+Sorting and Hashing
+
+
 
 
 
