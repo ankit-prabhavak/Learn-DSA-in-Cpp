@@ -137,7 +137,12 @@ Sorting and Hashing
 Note:
 Used Reverse function
 
-4. 
+4. Remove All Occurrences of a Substring [LeetCode 1910] [Strings]
+Note:
+Used find and erase methods
+
+5. 
+
 
 
 
