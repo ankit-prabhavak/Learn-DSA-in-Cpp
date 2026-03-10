@@ -141,7 +141,11 @@ Used Reverse function
 Note:
 Used find and erase methods
 
-5. 
+5. Permutation in String [LeetCode 567] [Strings]
+Note:
+Used Sliding Window Concept and Frequency Count Method
+
+6. 
 
 
 
