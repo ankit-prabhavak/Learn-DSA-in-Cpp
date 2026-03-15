@@ -149,6 +149,14 @@ Used Sliding Window Concept and Frequency Count Method
 Note:
 
 
+Strings (Part 2)
+----------------
+1. Longest Common Prefix [LeetCode 14] [Strings]
+Note:
+Used sorting and compared the smallest string with the largest string and returned the common btw them
+
+2. 
+
 
 
 
