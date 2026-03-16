@@ -155,7 +155,11 @@ Strings (Part 2)
 Note:
 Used sorting and compared the smallest string with the largest string and returned the common btw them
 
-2. 
+2. Group Anagrams [LeetCode 49] [Strings]
+Note:
+Used HashMap Approach with sorting. Easy and simple to understand
+
+3. 
 
 
 
