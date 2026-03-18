@@ -163,7 +163,11 @@ Used HashMap Approach with sorting. Easy and simple to understand
 Note:
 (Sliding Window + Frequency Map)
 
-4. 
+4. Longest Happy Prefix [LeetCode 1392] [Strings]
+Note:
+Used KMP (LPS Array) Method
+
+5. 
 
 
 
