@@ -167,7 +167,16 @@ Note:
 Note:
 Used KMP (LPS Array) Method
 
-5. 
+5. Rabin Karp Algorithm
+Not done yet
+
+6. Reverse Words in String [LeetCode 151] [Strings]
+Note:
+Sorting + substring method
+
+Binary Search 
+-------------
+1. 
 
 
 
