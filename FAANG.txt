@@ -176,7 +176,11 @@ Sorting + substring method
 
 Binary Search 
 -------------
-1. 
+1. Peak Index in a Mountain Array [LeetCode 852] [Searching]
+Note:
+Used Binary Search Approach
+
+2. 
 
 
 
