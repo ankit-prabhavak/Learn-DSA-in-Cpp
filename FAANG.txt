@@ -180,7 +180,11 @@ Binary Search
 Note:
 Used Binary Search Approach
 
-2. 
+2. Search in Rotated Sorted Array [LeetCode 33] [Searching]
+Note:
+Used modified binary Search
+
+3. 
 
 
 
