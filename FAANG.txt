@@ -184,7 +184,11 @@ Used Binary Search Approach
 Note:
 Used modified binary Search
 
-3. 
+3. Single Element in a Sorted Array [LeetCode 540] [Searching]
+Note:
+Binary Search Approach with modulo operation
+
+4. 
 
 
 
