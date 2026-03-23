@@ -188,19 +188,11 @@ Used modified binary Search
 Note:
 Binary Search Approach with modulo operation
 
-4. 
+4. Aggressive Cows [Sphere] [Searching]
+Note:
+Solved by applying binary search on range validating each distance
 
-
-
-
-
-
-
-
-
-
-
-
+6. 
 
 
 
