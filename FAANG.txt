@@ -192,7 +192,11 @@ Binary Search Approach with modulo operation
 Note:
 Solved by applying binary search on range validating each distance
 
-6. 
+6. Minimized Maximum of Products Distributed to Any Store [LeetCode 2064] [Searching]
+Note:
+Binary Search Approach IN range
+
+
 
 
 
