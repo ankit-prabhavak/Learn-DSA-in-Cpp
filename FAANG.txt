@@ -196,7 +196,11 @@ Solved by applying binary search on range validating each distance
 Note:
 Binary Search Approach IN range
 
+7. Painters Partition [HackerEarth] [Searching] 
+Note:
+Binary Search Approach IN range
 
+8. 
 
 
 
