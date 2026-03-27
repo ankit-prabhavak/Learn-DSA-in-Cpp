@@ -200,7 +200,16 @@ Binary Search Approach IN range
 Note:
 Binary Search Approach IN range
 
-8. 
+8. Median of the two sorted Array [LeetCode 4] [Searching]
+Note:
+To solve in O(log(m+n)) we need to use the binary search Approach
+
+Recursion & Backtracking
+------------------------
+1. Combination sum [LeetCode 39] [Recursion/Backtracking]
+Note:
+
+
 
 
 
