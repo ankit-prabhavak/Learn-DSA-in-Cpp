@@ -214,7 +214,26 @@ Used Backtracking and Recursion Concepts solved using two different Approaches
 Note:
 Used sorting and Backtracking
 
-3. 
+3. Palindrome Partitioning [LeetCode 131] [Recursion/Backtracking]
+Note:
+Same Approach Recursion + Backtracking
+
+
+4. N Queens [LeetCode 51] [Recursion/Backtracking]
+Note:
+Solved using grid Traversal, Recursion, and Backtracking
+
+5. Suduko Solver [LeetCode 37] [Recursion/Backtracking]
+Note:
+Recursion + Backtracking
+
+6. M-Coloring Problem [GeeksForGeeks] [Recursion/Backtracking]
+Note:
+Recursion + Backtracking
+
+Recursion & Backtracking (Part 2)
+---------------------------------
+1. 
 
 
 
