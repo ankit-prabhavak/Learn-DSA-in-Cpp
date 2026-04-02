@@ -233,7 +233,11 @@ Recursion + Backtracking
 
 Recursion & Backtracking (Part 2)
 ---------------------------------
-1. 
+1. Check Knight Tour Configuration [LeetCode 2596] [Recursion/Backtracking]
+Note:
+Explore all 8 moves and check whether the expVal == grid[row][col]. Take look at base cases carefully
+
+2. 
 
 
 

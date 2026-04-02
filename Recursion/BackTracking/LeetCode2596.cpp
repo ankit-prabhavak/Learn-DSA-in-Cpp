@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// LeetCode 2596: Check Knight Tour Configuration
 class Solution {
 public:
     bool isValid(vector<vector<int>>& grid, int row, int col, int n, int expVal) {
