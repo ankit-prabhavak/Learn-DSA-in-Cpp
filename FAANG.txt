@@ -237,6 +237,7 @@ Recursion & Backtracking (Part 2)
 Note:
 Explore all 8 moves and check whether the expVal == grid[row][col]. Take look at base cases carefully
 
+=======================================
 2. Subsets II [LeetCode 90] []
 Note:
 
@@ -244,8 +245,35 @@ Note:
 3. Sort an Array [LeetCode 912] []
 Note:
 
+4. Rat in a Maze [] []
+Note:
+=======================================
+
+5. Count Inversions [LeetCode 3193] [Recursion/Backtracking]
+Note:
+Dynamic Programming Approach
+
+
+Linked List (Part 1)
+--------------------
+1. Middle of the Linked List [LeetCode 876] [LinkedList]
+Note:
+Slow and Fast pointer approach
+
+2. Reverse Linked List [LeetCode 206] [LinkedList]
+Approach:
+In-Place Reversal of a Singly Linked List Using Pointer Manipulation
+
+3. Linked List Cycle II [LeetCode 142] [LinkedList]
+Approach:
+Detecting the Starting Node of a Cycle in a Linked List Using Floyd's Algorithm
+
 4. 
 
+
+Linked List (Part 2)
+--------------------
+1. Palindrome Linked List [LeetCode 234] [LinkedList]
 
 
 
