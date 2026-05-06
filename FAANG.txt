@@ -278,7 +278,10 @@ Linked List (Part 2)
 2. Add Two Numbers [LeetCode 2] [LinkedList]
 Approach: Used modulo operation
 
-3. 
+3. Rotate List [LeetCode 61] [LinkedList]
+Approach: Tail rotation
+
+4. 
 
 
 
