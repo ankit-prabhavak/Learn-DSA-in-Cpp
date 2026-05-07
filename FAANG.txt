@@ -281,7 +281,16 @@ Approach: Used modulo operation
 3. Rotate List [LeetCode 61] [LinkedList]
 Approach: Tail rotation
 
-4. 
+4. Reverse Nodes in k-Group [LeetCode 25] [LinkedList]
+Approach:
+
+
+Stacks & Queues (Part 1)
+------------------------
+1. Implement Stack using Queues [LeetCode 225] [Queue]
+Approach: Used 2 Queues
+
+2. 
 
 
 
