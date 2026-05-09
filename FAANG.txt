@@ -290,7 +290,10 @@ Stacks & Queues (Part 1)
 1. Implement Stack using Queues [LeetCode 225] [Queue]
 Approach: Used 2 Queues
 
-2. 
+2. Next Greater Element 1 [LeetCode 496] [Stack]
+Approach: Brute Force + Monotonic stack approach
+
+3. 
 
 
 

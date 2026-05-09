@@ -38,3 +38,41 @@ public:
         return ans;
     }
 };
+
+
+// Brute Force Approach
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+
+        vector<int> answer;
+        unordered_map<int, int> hm;
+
+        for(int i = 0; i < nums2.size(); i++) {
+            hm[nums2[i]] = i;
+        }
+
+        int n = nums2.size();
+
+        for(auto element: nums1) {
+
+            int idx = hm[element];
+            int flag = false;
+
+            while( ++idx < n) {
+
+                if(nums2[idx] > element) {
+                    answer.push_back(nums2[idx]);
+                    flag = true;
+                    break;
+                }
+            }
+
+            if(!flag) {
+                answer.push_back(-1);
+            }
+        }
+        
+        return answer;
+    }
+}; 
