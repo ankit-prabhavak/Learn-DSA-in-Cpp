@@ -293,7 +293,10 @@ Approach: Used 2 Queues
 2. Next Greater Element 1 [LeetCode 496] [Stack]
 Approach: Brute Force + Monotonic stack approach
 
-3. 
+3. Valid Parenthesis [LeetCode 20] [Stack]
+Approach: Standard solution using Stack and HashMap
+
+4. 
 
 
 
