@@ -296,7 +296,11 @@ Approach: Brute Force + Monotonic stack approach
 3. Valid Parenthesis [LeetCode 20] [Stack]
 Approach: Standard solution using Stack and HashMap
 
-4. 
+4. First Unique Character in a String [LeetCode 387] [Queue]
+Approach: HashMap + Queue (freq + Index order)
+
+5. 
+
 
 
 
