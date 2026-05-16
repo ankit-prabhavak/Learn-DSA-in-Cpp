@@ -300,5 +300,11 @@ Approach: Standard solution using Stack and HashMap
 Approach: HashMap + Queue (freq + Index order)
 
 5. Reverse first K of a Queue [GeeksForGeeks] [Queue]
-Approach: 
+Approach: Stack Based Approach
+
+6. Time Needed to Buy Tickets [LeetCode 2073] [Queue]
+Approach: Queue simulation and counting
+
+7. 
+
 
