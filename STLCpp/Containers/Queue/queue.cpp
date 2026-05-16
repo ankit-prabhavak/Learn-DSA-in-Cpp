@@ -33,7 +33,7 @@ int main(){
         q.pop(); // pop the front element
     }
     cout << endl; // print a newline
-
+    
     cout << "Size of queue after popping all elements: " << q.size() << endl; // print the size of the queue (0)
     cout << "Is queue empty? " << (q.empty() ? "Yes" : "No") << endl; // check if the queue is empty
     cout << "Size of queue: " << q.size() << endl; // print the size of the queue (0)

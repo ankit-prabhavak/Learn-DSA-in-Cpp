@@ -299,11 +299,6 @@ Approach: Standard solution using Stack and HashMap
 4. First Unique Character in a String [LeetCode 387] [Queue]
 Approach: HashMap + Queue (freq + Index order)
 
-5. 
-
-
-
-
-
-
+5. Reverse first K of a Queue [GeeksForGeeks] [Queue]
+Approach: 
 
