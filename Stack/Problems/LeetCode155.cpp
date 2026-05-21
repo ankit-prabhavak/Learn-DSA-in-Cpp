@@ -102,3 +102,47 @@ public:
  * int param_3 = obj->top();
  * int param_4 = obj->getMin();
  */
+
+ /*
+ 
+// My Approach
+Time complexity: O(1)
+Space complexity: O(n)
+
+ class MinStack {
+
+    stack<int> plate;
+    stack<int> mini;
+
+public:
+    MinStack() {
+
+    }
+
+    void push(int val) {
+
+        if(mini.empty() || val <= mini.top()) {
+            mini.push(val);
+        }
+
+        plate.push(val);
+    }
+
+    void pop() {
+
+        if(plate.top() == mini.top()) {
+            mini.pop();
+        }
+
+        plate.pop();
+    }
+
+    int top() {
+        return plate.top();
+    }
+
+    int getMin() {
+        return mini.top();
+    }
+};
+ */

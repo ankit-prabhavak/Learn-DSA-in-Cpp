@@ -305,6 +305,13 @@ Approach: Stack Based Approach
 6. Time Needed to Buy Tickets [LeetCode 2073] [Queue]
 Approach: Queue simulation and counting
 
-7. 
+7. LRU Cache [LeetCode 146] [Design]
+Approach: Hash Map, DLL 
+
+8. Get Min Element from stack [LeetCode 155] [Stack]
+Approach: Two stack approach
+
+9. 
+
 
 
