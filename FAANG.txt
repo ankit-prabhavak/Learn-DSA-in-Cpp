@@ -311,7 +311,13 @@ Approach: Hash Map, DLL
 8. Get Min Element from stack [LeetCode 155] [Stack]
 Approach: Two stack approach
 
-9. 
+9. Celebrity Problem [LeetCode Premium] [Stack]
+Approach:
+
+10. Rotting Oranges [LeetCode 994] [Queues]
+Approach: Grid Based Traversal, BFS, Map, Queue
+
+11. 
 
 
 
