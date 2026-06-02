@@ -315,7 +315,7 @@ Approach: Two stack approach
 Approach:
 
 10. Rotting Oranges [LeetCode 994] [Queues]
-Approach: Grid Based Traversal, BFS, Map, Queue
+Approach: Grid Based Traversal, BFS, Map, Queue 
 
 11. Sort a Stack [GeeksForGeeks] [Stack]
 Approach: 
