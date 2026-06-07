@@ -325,5 +325,13 @@ Approach:
 
 13. 
 
+Binary Trees(Part 1)
+--------------------
+
+1. Preorder Traversal [LeetCode 144] [Trees]
+Approach: Recursive + Iterative using stack
+
+2. 
+
 
 
