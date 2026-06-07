@@ -16,41 +16,45 @@ using namespace std;
      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// Recursive Approach
 class Solution {
 public:
-    vector<int> nums;
-    void helpMe(TreeNode* root) {
+    void dfs(TreeNode* root, vector<int>& ans) {
+        if (!root) return;
 
-        if(!root) return;
-
-        nums.push_back(root->val);
-        helpMe(root->left);
-        helpMe(root->right);
-
+        ans.push_back(root->val);
+        dfs(root->left, ans);
+        dfs(root->right, ans);
     }
-    // vector<int> preorderTraversal(TreeNode* root) {
-
-    //     helpMe(root);
-    //     return nums;
-        
-    // }
 
     vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        dfs(root, ans);
+        return ans;
+    }
+};
+
+// Iterative approach using stack
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        if (!root) return {};
 
         vector<int> ans;
-        stack<TreeNode*> s;
-        s.push(root);
-        
-        while(!s.empty()) {
-            TreeNode* curr = s.top();
-            if(curr != NULL) {
-                ans.push_back(curr->val);
-            }
-            s.pop();
+        stack<TreeNode*> st;
+        st.push(root);
 
-            
-            if(curr && curr->right != NULL) s.push(curr->right);
-            if(curr && curr->left != NULL) s.push(curr->left);
+        while (!st.empty()) {
+            TreeNode* curr = st.top();
+            st.pop();
+
+            ans.push_back(curr->val);
+
+            if (curr->right)
+                st.push(curr->right);
+
+            if (curr->left)
+                st.push(curr->left);
         }
 
         return ans;
