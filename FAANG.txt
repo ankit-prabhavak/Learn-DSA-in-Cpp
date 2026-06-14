@@ -337,5 +337,20 @@ Approach: Iterative using Queue
 3. Binary Tree Inorder Traversal [LeetCode 94] [Trees]
 Approach: Iterative + Recursive
 
+4. 
+
+Binary Trees(Part 2)
+--------------------
+
+1. 
+
+
+Binary Trees(Part 3)
+--------------------
+1. Bottom View of Binary Tree [GeeksForGeeks] [Trees]
+Approach: Horizontal Distancing, Queue, Map
+
+2. 
+
 
 
