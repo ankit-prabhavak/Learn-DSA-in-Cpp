@@ -27,8 +27,11 @@ public:
         dist[src] = 0;
 
         while (!pq.empty()) {
-            int u = pq.top().second;
+            auto [d, u] = pq.top();
             pq.pop();
+
+            if (d > dist[u]) // If the distance is greater than the recorded distance, skip processing (Stale entry in priority queue)
+               continue;
 
             for (auto& neighbor : adjList[u]) {
                 int v = neighbor.first;
