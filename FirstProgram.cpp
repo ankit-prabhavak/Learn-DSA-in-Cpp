@@ -22,3 +22,18 @@ return 0;
 
 //     return 0;
 // }
+
+
+#include <iostream>  //Preprocessor directive.
+
+using namespace std; //
+
+int add(int a, int b){
+
+    return a+b;
+}
+
+int main() {
+
+    return 0;
+}

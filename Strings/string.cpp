@@ -49,3 +49,27 @@ int main(){
 
     return 0;
 }
+
+/*
+| Method                | Purpose                                |
+| --------------------- | -------------------------------------- |
+| `length()` / `size()` | Number of characters                   |
+| `empty()`             | Check if empty                         |
+| `clear()`             | Remove all characters                  |
+| `front()`             | First character                        |
+| `back()`              | Last character                         |
+| `push_back()`         | Add one character at the end           |
+| `pop_back()`          | Remove last character                  |
+| `append()`            | Add another string                     |
+| `insert()`            | Insert characters/string               |
+| `erase()`             | Remove characters                      |
+| `replace()`           | Replace part of the string             |
+| `substr()`            | Extract a substring                    |
+| `find()`              | Find first occurrence                  |
+| `rfind()`             | Find last occurrence                   |
+| `compare()`           | Compare two strings                    |
+| `swap()`              | Exchange two strings                   |
+| `resize()`            | Change string length                   |
+| `c_str()`             | Convert to C-style string              |
+| `getline()`           | Read a full line (non-member function) |
+*/
