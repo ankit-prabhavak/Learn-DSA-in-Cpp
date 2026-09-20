@@ -44,8 +44,21 @@ int main () {
     return 0;
 }
 
+// Overlapping Subproblems:
 
 
+/*
+Short cut trick:
+
+Try to represent the problem in terms of index.
+
+Do all possible stuffs on that in according to the problem statement.
+
+sum of all stuffs for count all ways
+
+min of all stuffs for min ways
+max of all stuffs for max ways
+*/
 
 
 
