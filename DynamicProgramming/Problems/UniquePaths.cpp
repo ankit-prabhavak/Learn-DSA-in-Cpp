@@ -69,15 +69,17 @@ public:
 
     // recursive solution
     int uniquePaths(int m, int n) {
-       
-        if(m == 0 && n == 0) return 1;
+        return solve(m - 1, n - 1);
+    }
 
-        if(m == 0 || n == 0) return 0;
+    int solve(int m, int n) {
+        if (m == 0 && n == 0)
+            return 1;
 
-        int left = uniquePaths(m-1, n);
-        int up = uniquePaths(m, n-1);
+        if (m < 0 || n < 0)
+            return 0;
 
-        return left + up;
+        return solve(m - 1, n) + solve(m, n - 1);
     }
 };
     
