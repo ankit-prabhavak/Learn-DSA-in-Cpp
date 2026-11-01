@@ -42,7 +42,7 @@ class Solution {
         }
 
         for(int i=1; i<n; i++) {
-            for(int j=1; j<=tar; j++) {
+            for(int j=0; j<=tar; j++) {
                 int notTake = prev[j];
                 int take = 0;
                 if(num[i] <= j) {
@@ -80,7 +80,7 @@ class Solution {
         }
 
         for(int i=1; i<n; i++) {
-            for(int j=1; j<=tar; j++) {
+            for(int j=0; j<=tar; j++) {
                 int notTake = dp[i-1][j];
                 int take = 0;
                 if(num[i] <= j) {
