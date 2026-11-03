@@ -1,0 +1,148 @@
+ubuntu@ip-192-168-14-32:~$ aws ec2 describe-instances \
+--query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`]|[0].Value]' \
+--output table
+------------------------------------------------------------------------------
+|                              DescribeInstances                             |
++----------------------+-----------------------------------------------------+
+|  i-036687332898c346f |  Analyticsteam-win-jumpbox                          |
+|  i-0cfcf8048066aac49 |  Concierto-win-jump-platform                        |
+|  i-008559107086e644d |  Concierto-Portal-Agent                             |
+|  i-0ef67bb42f76928a8 |  Concierto-User-UAT-FE                              |
+|  i-06cc66af84d169c4d |  Concierto-User-UAT-BE                              |
+|  i-0f37fb41a42b25f5a |  Concierto-User-Dev-FE                              |
+|  i-096f9b0ca76302e8c |  Concierto-User-Dev-BE                              |
+|  i-0065140a7bcd8c1da |  jumphost-concierto-ibm-dev                         |
+|  i-0423bdfd0454dd6de |  cmdb-2.0-20231005                                  |
+|  i-0d3a528f49163c43b |  APM Validation Linux                               |
+|  i-0065c18f431bc67bd |  APM Validation                                     |
+|  i-092610ba026aab77c |  Automations-2.0-Apache Repo Server                 |
+|  i-0063aca7cb2ea2a66 |  Concierto-Partner-DEV-FE-OS-Hardened               |
+|  i-027d98ad1aafa4669 |  Concierto-Partner-DEV-BE-OS-Hardened               |
+|  i-0119b5fe0abb1ae6c |  jumphost-concierto-ibm-dev_os_hardened             |
+|  i-0001d7a845f3df3fd |  admin-portal                                       |
+|  i-0aa0c3efd529c607b |  discovery-mgmt-test                                |
+|  i-04f0cf6f3c5fee4d8 |  concierto-jumphost-win-ext-q3                      |
+|  i-0dac6ac1e6f35fd3f |  ibm-dev-linux-jumphost-os-hardened(september)-new  |
+|  i-09e112e6a42337f49 |  concierto-jumphost-win-internal-q3                 |
+|  i-00159770c87564f33 |  APM Validation-test(windows)                       |
+|  i-02c5875593a19365b |  apm-poc-lin3                                       |
+|  i-074086dd7fdf1826a |  apm-poc-win1                                       |
+|  i-047b8f0f6bdaec231 |  apm-poc-win3                                       |
+|  i-0a806042d15442270 |  apm-poc-lin2                                       |
+|  i-0e868bb5fd46ec78b |  apm-poc-win2                                       |
+|  i-06f20a948665cf176 |  apm-poc-lin1                                       |
+|  i-0550a7a9ffa03478f |  apm-poc-win2-pvt-sub                               |
+|  i-09538f8c1cfd5e131 |  apm-poc-lin1-pvt-sub                               |
+|  i-0e86bd9e2b852fdb3 |  apm-poc-win1-pvt-sub                               |
+|  i-0946e48533a559c45 |  eagleeye2.0-testing-lin1                           |
+|  i-0f6221e99281d760a |  ee-validation-debian                               |
+|  i-0ec1d72949247e60b |  apm-poc-lin2-pvt-sub                               |
+|  i-06bde8e07ebdf029e |  eagleeye2.0-testing-win2                           |
+|  i-0d6d45e56962cce6a |  eagleeye2.0-testing-lin2                           |
+|  i-067c890082f5fc318 |  apm-poc-win3-pvt-sub                               |
+|  i-017aa539547dee2c7 |  apm-poc-lin3-pvt-sub                               |
+|  i-0c98a70ad2aa14d84 |  eagleeye2.0-testing-win1                           |
+|  i-0f118787e8cd13792 |  ee-validation-RHEL                                 |
+|  i-0ecf995717c585205 |  ee-validation-alpine                               |
+|  i-03cc347df291851f9 |  ee-validation-win-2019                             |
+|  i-0fafc6425d6bb6964 |  ee-validation-win-2022                             |
+|  i-049ccc7af0225b71d |  ee-validation-win-2025                             |
+|  i-0d6304463f5e6956d |  None                                               |
+|  i-0abea84d98a8d01e7 |  ibm-dev-linux-jumphost-os-hardened-sep-2026        |
+|  i-0762ecf9e60012310 |  None                                               |
+|  i-0942e5d0ab89c1e8d |  None                                               |
+|  i-00bf4eaa1435533ec |  None                                               |
+|  i-06b578c0ad6dd73d0 |  None                                               |
+|  i-0a2abd5f0d13f0d9c |  None                                               |
+|  i-077549c71a8b85f57 |  None                                               |
+|  i-0b9d8d3bd65a0cde3 |  None                                               |
+|  i-0f470dca86d8b827a |  None                                               |
+|  i-0ad53dd93c5813f9f |  None                                               |
+|  i-0a8a69613d84aa6d4 |  None                                               |
+|  i-00820bb10cbf3159a |  None                                               |
+|  i-0d1aec73ea67fe781 |  None                                               |
+|  i-0a5e84275fd31342f |  None                                               |
+|  i-04e7373381929ef17 |  None                                               |
+|  i-07443280492131121 |  None                                               |
+|  i-043b4f0b65a6b2825 |  None                                               |
+|  i-014b54130f032dc49 |  None                                               |
+|  i-0f988f6183a4d3292 |  None                                               |
+|  i-022c047d57d7ea1ed |  None                                               |
++----------------------+-----------------------------------------------------+
+ubuntu@ip-192-168-14-32:~$
+
+
+
+
+ubuntu@ip-192-168-14-32:~$ aws ec2 describe-instances \
+--query 'Reservations[*].Instances[*].[InstanceId,InstanceType,State.Name,PlatformDetails,Architecture,LaunchTime]' \
+--output table
+-------------------------------------------------------------------------------------------------------------------------
+|                                                   DescribeInstances                                                   |
++---------------------+--------------+-------------+---------------------------+----------+-----------------------------+
+|  i-036687332898c346f|  t3a.medium  |  running    |  Windows                  |  x86_64  |  2026-06-08T01:31:07+00:00  |
+|  i-0cfcf8048066aac49|  t3a.medium  |  running    |  Windows                  |  x86_64  |  2026-06-08T01:31:07+00:00  |
+|  i-008559107086e644d|  t3a.medium  |  running    |  Linux/UNIX               |  x86_64  |  2026-06-08T01:31:07+00:00  |
+|  i-0ef67bb42f76928a8|  t3a.large   |  running    |  Linux/UNIX               |  x86_64  |  2026-06-08T02:31:06+00:00  |
+|  i-06cc66af84d169c4d|  t3a.large   |  running    |  Linux/UNIX               |  x86_64  |  2026-06-22T12:27:23+00:00  |
+|  i-0f37fb41a42b25f5a|  t3a.large   |  running    |  Linux/UNIX               |  x86_64  |  2026-06-08T02:31:06+00:00  |
+|  i-096f9b0ca76302e8c|  t3a.large   |  running    |  Linux/UNIX               |  x86_64  |  2026-06-22T12:27:31+00:00  |
+|  i-0065140a7bcd8c1da|  t3a.medium  |  stopped    |  Linux/UNIX               |  x86_64  |  2025-11-17T12:08:52+00:00  |
+|  i-0423bdfd0454dd6de|  t3a.large   |  running    |  Linux/UNIX               |  x86_64  |  2026-06-08T02:31:06+00:00  |
+|  i-0d3a528f49163c43b|  m6i.large   |  running    |  Linux/UNIX               |  x86_64  |  2026-06-08T02:31:06+00:00  |
+|  i-0065c18f431bc67bd|  m6i.large   |  running    |  Windows                  |  x86_64  |  2026-06-12T07:54:26+00:00  |
+|  i-092610ba026aab77c|  t3a.large   |  running    |  Linux/UNIX               |  x86_64  |  2025-01-20T10:04:47+00:00  |
+|  i-0063aca7cb2ea2a66|  t3a.large   |  stopped    |  Linux/UNIX               |  x86_64  |  2026-08-17T11:48:21+00:00  |
+|  i-027d98ad1aafa4669|  t3a.large   |  stopped    |  Linux/UNIX               |  x86_64  |  2026-08-12T11:56:51+00:00  |
+|  i-0119b5fe0abb1ae6c|  t3a.medium  |  stopped    |  Linux/UNIX               |  x86_64  |  2025-09-25T02:30:44+00:00  |
+|  i-0001d7a845f3df3fd|  t3a.medium  |  running    |  Linux/UNIX               |  x86_64  |  2025-08-26T09:08:02+00:00  |
+|  i-0aa0c3efd529c607b|  t3a.medium  |  stopped    |  Linux/UNIX               |  x86_64  |  2025-12-01T02:30:41+00:00  |
+|  i-04f0cf6f3c5fee4d8|  t3a.large   |  running    |  Windows                  |  x86_64  |  2026-06-08T01:31:07+00:00  |
+|  i-0dac6ac1e6f35fd3f|  t3a.2xlarge |  running    |  Linux/UNIX               |  x86_64  |  2026-06-08T01:31:07+00:00  |
+|  i-09e112e6a42337f49|  t3a.2xlarge |  running    |  Windows                  |  x86_64  |  2026-06-08T01:31:07+00:00  |
+|  i-00159770c87564f33|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-05-22T08:26:51+00:00  |
+|  i-02c5875593a19365b|  t3a.small   |  stopped    |  Linux/UNIX               |  x86_64  |  2026-06-12T07:41:59+00:00  |
+|  i-074086dd7fdf1826a|  t3a.small   |  stopped    |  Windows                  |  x86_64  |  2026-06-12T07:21:23+00:00  |
+|  i-047b8f0f6bdaec231|  t3a.small   |  stopped    |  Windows                  |  x86_64  |  2026-06-12T07:32:32+00:00  |
+|  i-0a806042d15442270|  t3a.small   |  stopped    |  Linux/UNIX               |  x86_64  |  2026-06-12T07:44:43+00:00  |
+|  i-0e868bb5fd46ec78b|  t3a.large   |  stopped    |  Windows                  |  x86_64  |  2026-07-29T15:47:27+00:00  |
+|  i-06f20a948665cf176|  t3a.small   |  stopped    |  Linux/UNIX               |  x86_64  |  2026-06-12T07:38:07+00:00  |
+|  i-0550a7a9ffa03478f|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-07-29T15:27:46+00:00  |
+|  i-09538f8c1cfd5e131|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-07-29T14:11:44+00:00  |
+|  i-0e86bd9e2b852fdb3|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-07-30T12:19:25+00:00  |
+|  i-0946e48533a559c45|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-07-30T12:46:38+00:00  |
+|  i-0f6221e99281d760a|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-08-07T12:19:51+00:00  |
+|  i-0ec1d72949247e60b|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-07-29T16:33:12+00:00  |
+|  i-06bde8e07ebdf029e|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-07-30T12:41:28+00:00  |
+|  i-0d6d45e56962cce6a|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-07-30T12:49:07+00:00  |
+|  i-067c890082f5fc318|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-07-30T12:26:05+00:00  |
+|  i-017aa539547dee2c7|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-07-30T12:03:01+00:00  |
+|  i-0c98a70ad2aa14d84|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-07-30T12:39:01+00:00  |
+|  i-0f118787e8cd13792|  t3a.small   |  running    |  Red Hat Enterprise Linux |  x86_64  |  2026-08-07T12:28:20+00:00  |
+|  i-0ecf995717c585205|  t3a.small   |  running    |  Linux/UNIX               |  x86_64  |  2026-08-06T05:45:52+00:00  |
+|  i-03cc347df291851f9|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-08-06T10:31:16+00:00  |
+|  i-0fafc6425d6bb6964|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-08-06T10:25:19+00:00  |
+|  i-049ccc7af0225b71d|  t3a.small   |  running    |  Windows                  |  x86_64  |  2026-08-06T10:22:45+00:00  |
+|  i-0d6304463f5e6956d|  r6i.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:12+00:00  |
+|  i-0abea84d98a8d01e7|  t3a.2xlarge |  running    |  Linux/UNIX               |  x86_64  |  2026-09-25T07:58:50+00:00  |
+|  i-0762ecf9e60012310|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0942e5d0ab89c1e8d|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-00bf4eaa1435533ec|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-06b578c0ad6dd73d0|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0a2abd5f0d13f0d9c|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-077549c71a8b85f57|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0b9d8d3bd65a0cde3|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0f470dca86d8b827a|  r6a.xlarge  |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:19+00:00  |
+|  i-0ad53dd93c5813f9f|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0a8a69613d84aa6d4|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-00820bb10cbf3159a|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0d1aec73ea67fe781|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-0a5e84275fd31342f|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-04e7373381929ef17|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-07443280492131121|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-043b4f0b65a6b2825|  c6a.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:14+00:00  |
+|  i-014b54130f032dc49|  r6a.xlarge  |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:19+00:00  |
+|  i-0f988f6183a4d3292|  r6i.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:12+00:00  |
+|  i-022c047d57d7ea1ed|  r6i.2xlarge |  terminated |  Linux/UNIX               |  x86_64  |  2026-11-03T03:30:12+00:00  |
++---------------------+--------------+-------------+---------------------------+----------+-----------------------------+
+ubuntu@ip-192-168-14-32:~$
