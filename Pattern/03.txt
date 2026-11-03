@@ -1,0 +1,187 @@
+ubuntu@ip-192-168-14-32:~$ aws ec2 describe-instances \
+--query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`]|[0].Value]'
+[
+    [
+        [
+            "i-036687332898c346f",
+            "Analyticsteam-win-jumpbox"
+        ]
+    ],
+    [
+        [
+            "i-0cfcf8048066aac49",
+            "Concierto-win-jump-platform"
+        ]
+    ],
+    [
+        [
+            "i-008559107086e644d",
+            "Concierto-Portal-Agent"
+        ]
+    ],
+    [
+        [
+            "i-0ef67bb42f76928a8",
+            "Concierto-User-UAT-FE"
+        ],
+        [
+            "i-06cc66af84d169c4d",
+            "Concierto-User-UAT-BE"
+        ],
+        [
+            "i-0f37fb41a42b25f5a",
+            "Concierto-User-Dev-FE"
+        ],
+        [
+            "i-096f9b0ca76302e8c",
+            "Concierto-User-Dev-BE"
+ubuntu@ip-192-168-14-32:~$
+
+
+
+
+ubuntu@ip-192-168-14-32:~$ aws ec2 describe-instances \
+--filters Name=instance-state-name,Values=stopped
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-033cf3158c27809b5",
+            "OwnerId": "468681639671",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2025-05-21T10:48:34+00:00",
+                                "DeleteOnTermination": false,
+                                "Status": "attached",
+                                "VolumeId": "vol-09ed1ad5adba15820"
+                            }
+                        }
+                    ],
+                    "ClientToken": "3a071b2d-f74d-44dd-ac96-79edfb4b3361",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "IamInstanceProfile": {
+                        "Arn": "arn:aws:iam::468681639671:instance-profile/SSMInstanceCore",
+                        "Id": "AIPAW2H42I33RNDCQ2RUD"
+                    },
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "468681639671",
+                                "PublicDnsName": "ec2-23-21-140-193.compute-1.amazonaws.com",
+                                "PublicIp": "23.21.140.193"
+                            },
+ubuntu@ip-192-168-14-32:~$
+
+
+
+
+
+
+ubuntu@ip-192-168-14-32:~$ kubectl get pvc -A | grep rt-basic-it-assistant-verify
+agentic-ai-runtime      rt-basic-it-assistant-verify-pvc                                                               Bound     pvc-293abdcb-2910-497a-80ec-89e22ecd339d   1Gi        RWO            gp2                          <unset>                 86d
+ubuntu@ip-192-168-14-32:~$
+
+
+
+
+
+
+
+
+
+
+ubuntu@ip-192-168-14-32:~$ aws ec2 describe-snapshots --owner-ids self --query 'Snapshots[*].[SnapshotId,VolumeSize,StartTime]'
+[
+    [
+        "snap-05e00f275f952fe70",
+        20,
+        "2025-11-03T02:35:32.313000+00:00"
+    ],
+    [
+        "snap-0da0f814e6b7169e7",
+        20,
+        "2025-10-31T11:45:31.527000+00:00"
+    ],
+    [
+        "snap-04149ebcda4f4a241",
+        20,
+        "2025-10-27T04:37:18.029000+00:00"
+    ],
+    [
+        "snap-0ca38c1c764440092",
+        20,
+        "2025-10-24T11:45:29.923000+00:00"
+    ],
+    [
+        "snap-0b73b1f4d942cc3ba",
+        20,
+        "2025-10-18T02:37:45.165000+00:00"
+    ],
+    [
+        "snap-0a654c26e19335923",
+        20,
+        "2025-10-17T11:45:41.075000+00:00"
+    ],
+    [
+        "snap-0641f28aec646cdaa",
+        50,
+        "2026-11-02T03:42:52.821000+00:00"
+ubuntu@ip-192-168-14-32:~$
+
+
+
+
+
+ubuntu@ip-192-168-14-32:~$ aws cloudwatch get-metric-statistics \
+--namespace AWS/NATGateway \
+--metric-name BytesOutToDestination \
+--dimensions Name=NatGatewayId,Value=nat-0512ce39ebbfce7ba \
+--statistics Sum \
+--start-time $(date -u -d "30 days ago" +%FT%TZ) \
+--end-time $(date -u +%FT%TZ) \
+--period 86400
+{
+    "Label": "BytesOutToDestination",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-15T10:50:00+00:00",
+            "Sum": 156656370338.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-10T10:50:00+00:00",
+            "Sum": 205789233265.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-22T10:50:00+00:00",
+            "Sum": 151266532663.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-20T10:50:00+00:00",
+            "Sum": 136016504367.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-27T10:50:00+00:00",
+            "Sum": 141486979114.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-08T10:50:00+00:00",
+            "Sum": 126612695987.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-31T10:50:00+00:00",
+ubuntu@ip-192-168-14-32:~$
+
+

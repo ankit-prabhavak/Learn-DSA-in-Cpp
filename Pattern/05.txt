@@ -1,0 +1,86 @@
+
+ubuntu@ip-192-168-14-32:~$ aws ec2 describe-volumes --filters Name=status,Values=available --query 'Volumes[*].[VolumeId,Size,VolumeType,CreateTime]'
+[
+    [
+        "vol-03d3c97a75bd17633",
+        1,
+        "gp2",
+        "2026-08-09T09:45:06+00:00"
+    ],
+    [
+        "vol-0f0b2760fece06b86",
+        1,
+        "gp2",
+        "2026-08-05T08:45:25.143000+00:00"
+    ],
+    [
+        "vol-027d31558127ca190",
+        1,
+        "gp2",
+        "2026-08-28T11:30:06.233000+00:00"
+    ],
+    [
+        "vol-0d40120d4e2e22dc7",
+        1,
+        "gp2",
+        "2026-08-09T09:21:16.926000+00:00"
+    ],
+    [
+        "vol-0965734a0b4fdbcc1",
+        1,
+        "gp2",
+        "2026-08-01T12:10:49.957000+00:00"
+    ],
+    [
+        "vol-002f7fef3782d89b6",
+        1,
+        "gp2",
+ubuntu@ip-192-168-14-32:~$
+
+
+
+
+
+
+
+ubuntu@ip-192-168-14-32:~$ aws ce get-cost-and-usage \
+--time-period Start=2026-10-01,End=2026-11-01 \
+--granularity MONTHLY \
+--metrics BlendedCost \
+--group-by Type=DIMENSION,Key=SERVICE
+{
+    "GroupDefinitions": [
+        {
+            "Type": "DIMENSION",
+            "Key": "SERVICE"
+        }
+    ],
+    "ResultsByTime": [
+        {
+            "TimePeriod": {
+                "Start": "2026-10-01",
+                "End": "2026-11-01"
+            },
+            "Total": {},
+            "Groups": [
+                {
+                    "Keys": [
+                        "AWS Backup"
+                    ],
+                    "Metrics": {
+                        "BlendedCost": {
+                            "Amount": "1.1263478457",
+                            "Unit": "USD"
+                        }
+                    }
+                },
+                {
+                    "Keys": [
+                        "AWS CloudTrail"
+                    ],
+                    "Metrics": {
+                        "BlendedCost": {
+                            "Amount": "0",
+                            "Unit": "USD"
+                        }
+ubuntu@ip-192-168-14-32:~$
