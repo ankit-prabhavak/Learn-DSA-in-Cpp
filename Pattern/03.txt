@@ -1,0 +1,50 @@
+ubuntu@ip-172-16-11-72:~$ #!/bin/bash
+
+START_TIME=$(date -u -d "30 days ago" +%FT%TZ)
+END_TIME=$(date -u +%FT%TZ)
+
+printf "%-40s %-15s\n" "LOAD BALANCER NAME" "REQUEST COUNT"
+printf "%s\n" "------------------------------------------------------------"
+
+aws elbv2 describe-load-balancers \
+  --query 'LoadBalancers[*].[LoadBalancerName,LoadBalancerArn]' \
+  --output text | while read -r LB_NAME LB_ARN; do
+
+    LB_RESOURCE_ID=$(echo "$LB_ARN" | sed 's/.*:loadbalancer\///')
+
+    REQUEST_COUNT=$(aws cloudwatch get-metric-statistics \
+        --namespace AWS/ApplicationELB \
+        --metric-name RequestCount \
+        --dimensions Name=LoadBalancer,Value="$LB_RESOURCE_ID" \
+        --statistics Sum \
+        --start-time "$START_TIME" \
+        --end-time "$END_TIME" \
+        --period 2592000 \
+        --query 'sum(Datapoints[].Sum)' \
+        --output text 2>/dev/null)
+
+    REQUEST_COUNT=${REQUEST_COUNT:-0}
+
+    if [[ "$REQUEST_COUNT" == "None" || "$REQUEST_COUNT" == "0" || "$REQUEST_COUNT" == "0.0" ]]; then
+        printf "%-40s %-15s\n" "$LB_NAME" "0"
+    fi
+
+done
+LOAD BALANCER NAME                       REQUEST COUNT
+------------------------------------------------------------
+k8s-demokeyc-keycloak-36290c4882         0
+concierto-user-demo-BE                   0
+concierto-user-demo-FE                   0
+GEN-AI-DEMO-LB                           0
+ubuntu@ip-172-16-11-72:~$ aws elbv2 describe-load-balancers \
+--query 'LoadBalancers[*].LoadBalancerName'
+[
+    "k8s-demokeyc-keycloak-36290c4882",
+    "k8s-conciertoexternal-9745abf26c",
+    "k8s-conciertointernal-53cdf4fa74",
+    "concierto-user-demo-BE",
+    "concierto-user-demo-FE",
+    "k8s-demoeagleeyemulti-62d4128427",
+    "GEN-AI-DEMO-LB"
+]
+ubuntu@ip-172-16-11-72:~$

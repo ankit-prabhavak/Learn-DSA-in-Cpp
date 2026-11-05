@@ -1,0 +1,114 @@
+ubuntu@ip-172-16-11-72:~$ aws ec2 describe-instances \
+--query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`]|[0].Value]' \
+--output table
+-----------------------------------------------------------------------------
+|                             DescribeInstances                             |
++----------------------+----------------------------------------------------+
+|  i-0de87a15055f6ded5 |  gen_AI_POC-1                                      |
+|  i-070e56e58f19e8d32 |  eagleeye-application-demo                         |
+|  i-076ec3636a48ff12a |  eagleeye-demo-win01                               |
+|  i-0ec108b544f6c1e6f |  apm-validation-demo                               |
+|  i-098b5de257b08d781 |  APM validations                                   |
+|  i-0049e434401e178ef |  eagleeye-demo-lnx1                                |
+|  i-0eb47fe394be5b441 |  eagleeye_demo_lnx1                                |
+|  i-0eff555c818c53075 |  demo-jumphost-os-hardened-linux-sept-2025         |
+|  i-04e67ae11c4075a55 |  demo-jumphost-os-hardened-win-external-sept-2025  |
+|  i-0053e9730c1c41d1f |  demo-jumphost-os-hardened-win-internal-sept-2025  |
+|  i-040c9cf8019905c1e |  user-data-test                                    |
+|  i-06e4507ad2d8ddccf |  demo-selfhosted-agent                             |
+|  i-0022c9c828b11fcdd |  None                                              |
+|  i-0261c23c0865ba36f |  None                                              |
+|  i-0e6536349258743c4 |  None                                              |
+|  i-03921358715622b2c |  None                                              |
+|  i-03c4c4a98c18a04b4 |  None                                              |
+|  i-0ce37902a4f3202df |  None                                              |
+|  i-04b7aba6f66b13bd9 |  None                                              |
+|  i-03972d1d04bc8553a |  None                                              |
+|  i-027d310da26d49763 |  None                                              |
+|  i-034882e00c8011e58 |  None                                              |
+|  i-073a80746464be95c |  None                                              |
++----------------------+----------------------------------------------------+
+ubuntu@ip-172-16-11-72:~$ aws ec2 describe-instances \
+--query 'Reservations[*].Instances[*].[InstanceId,InstanceType,State.Name,PlatformDetails,Architecture,LaunchTime]' \
+--output table
+--------------------------------------------------------------------------------------------------------
+|                                           DescribeInstances                                          |
++---------------------+--------------+----------+-------------+---------+------------------------------+
+|  i-0de87a15055f6ded5|  t3.medium   |  stopped |  Linux/UNIX |  x86_64 |  2025-07-28T10:57:21+00:00   |
+|  i-070e56e58f19e8d32|  t3a.medium  |  running |  Linux/UNIX |  x86_64 |  2025-07-29T09:00:43+00:00   |
+|  i-076ec3636a48ff12a|  t3.micro    |  running |  Windows    |  x86_64 |  2025-07-29T08:00:27+00:00   |
+|  i-0ec108b544f6c1e6f|  t3a.large   |  running |  Windows    |  x86_64 |  2026-06-16T11:28:49+00:00   |
+|  i-098b5de257b08d781|  t3a.medium  |  running |  Linux/UNIX |  x86_64 |  2026-06-16T11:36:49+00:00   |
+|  i-0049e434401e178ef|  t3.small    |  running |  Linux/UNIX |  x86_64 |  2025-07-28T10:06:19+00:00   |
+|  i-0eb47fe394be5b441|  t3.small    |  running |  Linux/UNIX |  x86_64 |  2025-07-28T10:19:08+00:00   |
+|  i-0eff555c818c53075|  t3a.medium  |  running |  Linux/UNIX |  x86_64 |  2026-07-27T12:20:09+00:00   |
+|  i-04e67ae11c4075a55|  t3a.medium  |  running |  Windows    |  x86_64 |  2026-08-14T06:21:34+00:00   |
+|  i-0053e9730c1c41d1f|  t3a.large   |  running |  Windows    |  x86_64 |  2026-08-14T06:21:34+00:00   |
+|  i-040c9cf8019905c1e|  t2.medium   |  running |  Linux/UNIX |  x86_64 |  2026-05-11T17:06:56+00:00   |
+|  i-06e4507ad2d8ddccf|  t3a.xlarge  |  running |  Linux/UNIX |  x86_64 |  2026-07-08T06:00:05+00:00   |
+|  i-0022c9c828b11fcdd|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:01+00:00   |
+|  i-0261c23c0865ba36f|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:28+00:00   |
+|  i-0e6536349258743c4|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:28+00:00   |
+|  i-03921358715622b2c|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:28+00:00   |
+|  i-03c4c4a98c18a04b4|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:28+00:00   |
+|  i-0ce37902a4f3202df|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:00+00:00   |
+|  i-04b7aba6f66b13bd9|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:11:01+00:00   |
+|  i-03972d1d04bc8553a|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:38+00:00   |
+|  i-027d310da26d49763|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:27+00:00   |
+|  i-034882e00c8011e58|  c6a.8xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:27+00:00   |
+|  i-073a80746464be95c|  m6a.2xlarge |  running |  Linux/UNIX |  x86_64 |  2026-10-26T14:10:52+00:00   |
++---------------------+--------------+----------+-------------+---------+------------------------------+
+ubuntu@ip-172-16-11-72:~$
+
+
+
+
+ubuntu@ip-172-16-11-72:~$ aws ce get-cost-and-usage \
+--time-period Start=2026-10-01,End=2026-11-01 \
+--granularity MONTHLY \
+--metrics BlendedCost \
+--group-by Type=DIMENSION,Key=SERVICE \
+--query 'ResultsByTime[0].Groups[*].[Keys[0],Metrics.BlendedCost.Amount]' \
+--output table
+-----------------------------------------------------------------------
+|                           GetCostAndUsage                           |
++--------------------------------------------------+------------------+
+|  AWS Backup                                      |  0.0056064687    |
+|  AWS CloudFormation                              |  0               |
+|  AWS CloudShell                                  |  0.0000001969    |
+|  AWS CloudTrail                                  |  3.0352285       |
+|  AWS Config                                      |  0.177           |
+|  AWS Glue                                        |  282.44136962    |
+|  AWS Key Management Service                      |  18.5404079412   |
+|  AWS Lambda                                      |  12.9056131993   |
+|  AWS Network Firewall                            |  587.76          |
+|  AWS Secrets Manager                             |  169.9324822797  |
+|  AWS Security Hub                                |  0.573748        |
+|  AWS Step Functions                              |  0.0000384143    |
+|  AWS Systems Manager                             |  0.306075        |
+|  AWS WAF                                         |  30.6198994447   |
+|  AWS X-Ray                                       |  30.0750744852   |
+|  Amazon DynamoDB                                 |  0               |
+|  Amazon EC2 Container Registry (ECR)             |  86.3490514851   |
+|  Amazon ElastiCache                              |  35.712          |
+|  EC2 - Other                                     |  493.2832157695  |
+|  Amazon Elastic Compute Cloud - Compute          |  347.152209796   |
+|  Amazon Elastic Container Service for Kubernetes |  74.4            |
+|  Amazon Elastic File System                      |  0.3535087851    |
+|  Amazon Elastic Load Balancing                   |  142.1127556163  |
+|  Amazon GuardDuty                                |  99.6774875348   |
+|  Amazon Managed Streaming for Apache Kafka       |  322.6115397263  |
+|  Amazon Relational Database Service              |  269.5179062527  |
+|  Amazon Route 53                                 |  0.741880342     |
+|  Amazon Simple Notification Service              |  0.0022565331    |
+|  Amazon Simple Queue Service                     |  0.3735817483    |
+|  Amazon Simple Storage Service                   |  41.4886991904   |
+|  Amazon Translate                                |  0               |
+|  Amazon Virtual Private Cloud                    |  137.647926485   |
+|  AmazonCloudWatch                                |  860.7747777696  |
+|  CloudWatch Events                               |  0               |
+|  Tax                                             |  0               |
++--------------------------------------------------+------------------+
+ubuntu@ip-172-16-11-72:~$
+
+

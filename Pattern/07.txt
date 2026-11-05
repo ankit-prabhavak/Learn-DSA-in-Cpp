@@ -1,0 +1,340 @@
+ubuntu@ip-172-16-11-72:~$ aws ec2 describe-nat-gateways \
+  --query 'NatGateways[*].[NatGatewayId,State,SubnetId,VpcId,NatGatewayAddresses[0].PublicIp]' \
+  --output table
+---------------------------------------------------------------------------------------------------------------
+|                                             DescribeNatGateways                                             |
++-----------------------+------------+----------------------------+------------------------+------------------+
+|  nat-099fac80b5cca219a|  available |  subnet-05b894b30a6c48d3a  |  vpc-0803a2310e1bba44e |  44.196.202.151  |
++-----------------------+------------+----------------------------+------------------------+------------------+
+ubuntu@ip-172-16-11-72:~$ nat-099fac80b5cca219a
+
+aws cloudwatch list-metrics \
+  --namespace AWS/NATGateway \
+  --dimensions Name=NatGatewayId,Value=nat-099fac80b5cca219a
+
+
+{
+    "Metrics": [
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PacketsInFromSource",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "ConnectionAttemptCount",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "IdleTimeoutCount",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "BytesInFromSource",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "BytesInFromDestination",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PacketsDropCount",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PacketsOutToSource",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "BytesOutToDestination",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "BytesOutToSource",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "ActiveConnectionCount",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "ErrorPortAllocation",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PacketsOutToDestination",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "ConnectionEstablishedCount",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PeakBytesPerSecond",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PeakPacketsPerSecond",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        },
+        {
+            "Namespace": "AWS/NATGateway",
+            "MetricName": "PacketsInFromDestination",
+            "Dimensions": [
+                {
+                    "Name": "NatGatewayId",
+                    "Value": "nat-099fac80b5cca219a"
+                }
+            ]
+        }
+    ]
+}
+ubuntu@ip-172-16-11-72:~$
+
+
+ubuntu@ip-172-16-11-72:~$ aws cloudwatch get-metric-statistics --namespace AWS/NATGateway --metric-name BytesOutToDestination --dimensions Name=NatGatewayId,Value=nat-099fac80b5cca219a --statistics Sum --start-time $(date -u -d "30 days ago" +%FT%TZ) --end-time $(date -u +%FT%TZ) --period 86400
+{
+    "Label": "BytesOutToDestination",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-11-02T11:15:00+00:00",
+            "Sum": 56259688346.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-14T11:15:00+00:00",
+            "Sum": 28229555531.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-09T11:15:00+00:00",
+            "Sum": 26464388732.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-21T11:15:00+00:00",
+            "Sum": 32892683640.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-19T11:15:00+00:00",
+            "Sum": 29109516983.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-31T11:15:00+00:00",
+            "Sum": 46755148015.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-26T11:15:00+00:00",
+            "Sum": 30056122876.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-07T11:15:00+00:00",
+            "Sum": 29363916623.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-30T11:15:00+00:00",
+            "Sum": 54278532834.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-11T11:15:00+00:00",
+            "Sum": 26106303830.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-06T11:15:00+00:00",
+            "Sum": 28956573509.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-18T11:15:00+00:00",
+            "Sum": 24777188922.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-16T11:15:00+00:00",
+            "Sum": 25794090286.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-28T11:15:00+00:00",
+            "Sum": 63664688095.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-23T11:15:00+00:00",
+            "Sum": 25684113858.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-11-04T11:15:00+00:00",
+            "Sum": 55611113484.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-27T11:15:00+00:00",
+            "Sum": 62924164252.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-08T11:15:00+00:00",
+            "Sum": 29983904913.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-11-03T11:15:00+00:00",
+            "Sum": 55865257993.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-15T11:15:00+00:00",
+            "Sum": 28079703577.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-13T11:15:00+00:00",
+            "Sum": 28352425541.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-25T11:15:00+00:00",
+            "Sum": 25153648868.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-20T11:15:00+00:00",
+            "Sum": 28983409264.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-11-01T11:15:00+00:00",
+            "Sum": 47970067290.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-17T11:15:00+00:00",
+            "Sum": 23534656436.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-12T11:15:00+00:00",
+            "Sum": 29002496095.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-24T11:15:00+00:00",
+            "Sum": 24265769967.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-22T11:15:00+00:00",
+            "Sum": 28972719939.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-29T11:15:00+00:00",
+            "Sum": 70359137099.0,
+            "Unit": "Bytes"
+        },
+        {
+            "Timestamp": "2026-10-10T11:15:00+00:00",
+            "Sum": 23735906450.0,
+            "Unit": "Bytes"
+        }
+    ]
+}
+ubuntu@ip-172-16-11-72:~$
+

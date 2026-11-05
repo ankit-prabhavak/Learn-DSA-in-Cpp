@@ -1,0 +1,82 @@
+ubuntu@ip-172-16-11-72:~$ #!/bin/bash
+
+# ==============================================================================
+# Script Name : eks_infrastructure_audit.sh
+# Description : Deep discovery of all EKS clusters and node group specifications.
+# ==============================================================================
+
+# Fetch list of all active clusters
+CLUSTERS=$(aws eks list-clusters --query 'clusters' --output text)
+
+if [ -z "$CLUSTERS" ] || [ "$CLUSTERS" == "None" ]; then
+    echo "❌ No EKS Clusters found in this AWS region."
+    exit 0
+fi
+
+for CLUSTER in $CLUSTERS; do
+    echo "================================================================================"
+    echo "🛸 CLUSTER PROFILE: $CLUSTER"
+    echo "================================================================================"
+
+    # Extract Cluster-level metadata
+    aws eks describe-cluster \
+        --name "$CLUSTER" \
+        --query 'cluster.[version, status, endpoint, roleArn]' \
+        --output table \
+        --text 2>/dev/null | awk 'BEGIN{print "K8s Version | Status | Endpoint | IAM Role"}; {print}'
+
+    echo -e "\n🕵️‍♂️ Discovering Associated Worker Node Groups..."
+
+    # Fetch all nodegroups for this specific cluster
+    NODEGROUPS=$(aws eks list-nodegroups --cluster-name "$CLUSTER" --query 'nodegroups' --output text)
+
+    if [ -z "$NODEGROUPS" ] || [ "$NODEGROUPS" == "None" ]; then
+        echo "  ⚠️ No managed nodegroups found attached to cluster: $CLUSTER"
+        echo "--------------------------------------------------------------------------------"
+        continue
+doneecho -e "================================================================================\n"OUP" --query 'nodegroup.subnets' --
+================================================================================
+🛸 CLUSTER PROFILE: concierto-demo
+================================================================================
+K8s Version | Status | Endpoint | IAM Role
+
+🕵️‍♂️ Discovering Associated Worker Node Groups...
+  ----------------------------------------------------------------------------
+  📦 NODE GROUP: concierto-demo-ng-1-3
+  ----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+|                                               DescribeNodegroup                                              |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+| 1_Status |     2_AMI_Type       | 3_Instances  | 4_Disk_Size  | 5_Capacity  | 6_Min  |  7_Desired  |  8_Max  |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+|  ACTIVE  |  BOTTLEROCKET_x86_64 |  None        |  None        |  ON_DEMAND  |  8     |  8          |  13     |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+     🌐 Subnet Routing Lanes: [ subnet-04a207f38683352fe,subnet-0507eb691611f9c50 ]
+
+  ----------------------------------------------------------------------------
+  📦 NODE GROUP: concierto-ibmdemo-spend-1-25
+  ----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+|                                               DescribeNodegroup                                              |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+| 1_Status |     2_AMI_Type       | 3_Instances  | 4_Disk_Size  | 5_Capacity  | 6_Min  |  7_Desired  |  8_Max  |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+|  ACTIVE  |  BOTTLEROCKET_x86_64 |  m6a.2xlarge |  None        |  ON_DEMAND  |  1     |  1          |  4      |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+     🌐 Subnet Routing Lanes: [ subnet-04a207f38683352fe,subnet-0507eb691611f9c50 ]
+
+  ----------------------------------------------------------------------------
+  📦 NODE GROUP: eagleeye-new-v1
+  ----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+|                                               DescribeNodegroup                                              |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+| 1_Status |     2_AMI_Type       | 3_Instances  | 4_Disk_Size  | 5_Capacity  | 6_Min  |  7_Desired  |  8_Max  |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+|  ACTIVE  |  BOTTLEROCKET_x86_64 |  None        |  None        |  ON_DEMAND  |  2     |  2          |  3      |
++----------+----------------------+--------------+--------------+-------------+--------+-------------+---------+
+     🌐 Subnet Routing Lanes: [ subnet-04a207f38683352fe,subnet-0507eb691611f9c50 ]
+
+================================================================================
+
+ubuntu@ip-172-16-11-72:~$
